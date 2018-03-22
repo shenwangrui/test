@@ -4,6 +4,8 @@
 date
 echo "loadavg:" && cat /proc/loadavg
 echo -e \\n
+echo "sched_debug:" && cat /proc/sched_debug
+echo -e \\n
 echo "meminfo:" && cat /proc/meminfo
 echo -e \\n
 echo "zoneinfo:" && cat /proc/zoneinfo
@@ -17,6 +19,10 @@ echo -e \\n
 echo "httproxy info:"
 ps | grep httproxy
 cat /tmp/lb.conf.log | grep error
+
+echo -e \\n
+cat /proc/net/snmp
+cat /proc/net/dev
 
 echo -e \\n
 echo "Processes info:"
